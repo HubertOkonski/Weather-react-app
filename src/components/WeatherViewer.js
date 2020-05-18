@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-
 function WeatherViewer(props) {
   useEffect(() => {
     if (!navigator.geolocation && !props.location) {
