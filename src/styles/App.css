@@ -1,0 +1,65 @@
+#root {
+  height: 100vh;
+  min-height: 450px;
+  position: absolute;
+  z-index: -99;
+  width: 100%;
+  background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
+}
+.App {
+  position: absolute;
+  text-align: center;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+}
+#inputCity:focus {
+  outline: none;
+  border: 1px solid rgb(102, 98, 98);
+  box-shadow: none;
+}
+.weather-description {
+  text-transform: capitalize;
+}
+.icon {
+  width: 6rem;
+}
+.search-panel {
+  margin-top: 15px;
+}
+.sm-icon {
+  width: 50px;
+}
+.weather-humidity-temperature {
+  display: flex;
+  justify-content: space-around;
+}
+.info-container {
+  display: flex;
+  align-items: center;
+}
+#inputCity {
+  width: 250px;
+}
+.location-setter {
+  position: absolute;
+  margin: 10px 0 0 10px;
+  top: 0;
+  left: 0;
+}
+.location-setter:hover {
+  cursor: pointer;
+}
+.btn {
+  width: 20vw;
+  min-width: 100px;
+  max-width: 175px;
+  border-radius: 0px 7px 7px 0px !important;
+}
+@media only screen and (max-width: 1023px) {
+  .App {
+    width: 100%;
+    top: 30%;
+    transform: translate(-50%, -30%);
+  }
+}
