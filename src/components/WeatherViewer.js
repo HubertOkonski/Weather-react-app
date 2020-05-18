@@ -1,25 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 
 function WeatherViewer(props) {
   useEffect(() => {
     if (!navigator.geolocation && !props.location) {
-      console.log("not supported");
     } else if (navigator.geolocation && props.location) {
-      console.log(navigator.geolocation && props.location);
-      console.log("supported");
       navigator.geolocation.getCurrentPosition(success, error);
     }
   });
   function getCityByCords(x, y) {
     const apiID = "c91c266cec52dcfc2a3029ee89b0fde7";
     const url = `http://api.openweathermap.org/data/2.5/weather?lat=${x}&lon=${y}&appid=${apiID}&lang=pl`;
-    console.log(url);
     fetch(url)
-      .then(response => response.json())
-      .then(data => {
+      .then((response) => response.json())
+      .then((data) => {
         showWeather(data);
       })
-      .catch(error => {
+      .catch((error) => {
         props.setConnectionStatus(false);
       });
   }
@@ -36,7 +32,7 @@ function WeatherViewer(props) {
       temperature: (weather.main.temp - 273.15).toFixed(1),
       humidity: weather.main.humidity,
       description: weather.weather[0].description,
-      icon: weather.weather[0].icon
+      icon: weather.weather[0].icon,
     });
   }
   function error() {}
@@ -46,6 +42,7 @@ function WeatherViewer(props) {
         <img
           className="icon"
           src={require(`../icons/${props.city.icon}.svg`)}
+          alt="Weather icon not loaded"
         />
       </h1>
       <h1>{props.icon}</h1>

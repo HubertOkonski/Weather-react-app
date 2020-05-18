@@ -1,6 +1,6 @@
 import "../styles/App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import WeatherViewer from "./WeatherViewer";
 import WeatherSearch from "./WeatherSearch";
 import LocationSetter from "./LocationSetter";

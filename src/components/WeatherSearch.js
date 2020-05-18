@@ -5,7 +5,7 @@ import {
   Form,
   FormGroup,
 } from "react-bootstrap";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 export default function WeatherSearch(props) {
   const [searchedCity, setSearch] = useState("");
   const handleChange = (e) => {
@@ -18,7 +18,6 @@ export default function WeatherSearch(props) {
   const SearchCity = () => {
     const apiID = "c91c266cec52dcfc2a3029ee89b0fde7";
     const url = `http://api.openweathermap.org/data/2.5/weather?q=${searchedCity}&appid=${apiID}&lang=pl`;
-    console.log(url);
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
